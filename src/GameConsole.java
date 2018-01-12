@@ -11,13 +11,18 @@ public class GameConsole {
 		
 		// describe the game
 		System.out.println( game.toString() );
+		System.out.println( game.getMessage() );
 		
-		// This is just an example.
-		System.out.println( game.getMessage() );
-		System.out.print("Your answer? ");
-		int guess = console.nextInt();
-		boolean correct = game.guess(guess);
-		System.out.println( game.getMessage() );
+		int guess;
+		boolean correct;
+		
+		do {
+			System.out.print("Your answer? ");
+			guess = console.nextInt();
+			correct = game.guess(guess);
+			if(!correct) System.out.println( game.getMessage() );
+		} while (!correct);
+		
 		return guess;
 	}
 	
