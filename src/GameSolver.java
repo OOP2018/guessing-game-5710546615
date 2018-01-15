@@ -16,8 +16,8 @@ public class GameSolver {
 
 		int guess = 0;
 		boolean correct = false;
-		int upperBound = game.getUpperBound();
-		int lowerBound = 1;
+		int max = game.getUpperBound();
+		int min = 1;
 		String msg;
 
 		// describe the game
@@ -25,13 +25,8 @@ public class GameSolver {
 		System.out.println(game.getMessage());
 
 		while (!correct) {
-			double sum = upperBound + lowerBound;
-			if (lowerBound == game.getUpperBound() - 1) {
-				guess = (int) Math.ceil(sum / 2);
-			} else {
-				guess = (int) (sum / 2);
-			}
-
+			guess = min + (max - min)/2;
+			
 			System.out.print("Your answer? " + guess + "\n");
 			correct = game.guess(guess);
 			msg = game.getMessage();
@@ -39,9 +34,9 @@ public class GameSolver {
 			if (!correct) {
 				System.out.println(msg);
 				if (msg.contains("small")) {
-					lowerBound = guess;
+					min = guess + 1;
 				} else /* if (msg.contains("large") */ {
-					upperBound = guess;
+					max = guess - 1;
 				}
 			}
 		}

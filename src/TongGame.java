@@ -29,7 +29,7 @@ public class TongGame extends NumberGame {
 		long seed = System.nanoTime();
 		Random rand = new Random(seed);
 		this.secret = rand.nextInt(this.upperBound) + 1;
-		super.setMessage("I'm thinking of a number betwenn 1 and " + this.upperBound);
+		super.setMessage("I'm thinking of a number between 1 and " + this.upperBound);
 	}
 
 	/**
