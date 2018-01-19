@@ -18,7 +18,6 @@ public class GameSolver {
 		boolean correct = false;
 		int max = game.getUpperBound();
 		int min = 1;
-		String msg;
 
 		// describe the game
 		System.out.println(game.toString());
@@ -27,13 +26,10 @@ public class GameSolver {
 		while (!correct) {
 			guess = min + (max - min)/2;
 			
-			System.out.print("Your answer? " + guess + "\n");
 			correct = game.guess(guess);
-			msg = game.getMessage();
 
 			if (!correct) {
-				System.out.println(msg);
-				if (msg.contains("small")) {
+				if (game.getMessage().contains("small")) {
 					min = guess + 1;
 				} else /* if (msg.contains("large") */ {
 					max = guess - 1;
