@@ -19,10 +19,6 @@ public class GameSolver {
 		int max = game.getUpperBound();
 		int min = 1;
 
-		// describe the game
-		System.out.println(game.toString());
-		System.out.println(game.getMessage());
-
 		while (!correct) {
 			guess = min + (max - min)/2;
 			
