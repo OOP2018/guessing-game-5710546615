@@ -4,7 +4,6 @@ import java.util.Random;
  * Game of guessing a secret number.
  * 
  * @author Visurt Anuttivong
- * @version 5710546615
  */
 public class TongGame extends NumberGame {
 

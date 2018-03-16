@@ -4,6 +4,8 @@
  * 
  * Your class should not override getMessage() and setMessage(), just use the
  * methods from this class.
+ * 
+ * @author Visurt Anuttivong
  */
 public class NumberGame extends java.util.Observable {
 	/** A helpful message for user. */

@@ -1,5 +1,7 @@
 /**
  * Automatically find the secret to any NumberGame.
+ * 
+ * @author Visurt Anuttivong
  */
 public class GameSolver {
 
