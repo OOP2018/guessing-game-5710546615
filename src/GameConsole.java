@@ -8,8 +8,7 @@ public class GameConsole {
 	/**
 	 * The play method plays a game using input from a user.
 	 *
-	 * @param game
-	 *            the NumberGame to solve.
+	 * @param game the NumberGame to solve.
 	 * @return guess the correct number.
 	 */
 	public int play(NumberGame game) {

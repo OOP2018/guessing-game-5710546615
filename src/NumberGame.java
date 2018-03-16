@@ -5,7 +5,7 @@
  * Your class should not override getMessage() and setMessage(), just use the
  * methods from this class.
  */
-public class NumberGame {
+public class NumberGame extends java.util.Observable {
 	/** A helpful message for user. */
 	private String message;
 
@@ -18,8 +18,7 @@ public class NumberGame {
 	/**
 	 * Evaluate a user's answer to the game.
 	 * 
-	 * @param answer
-	 *            is the user's answer, as an integer.
+	 * @param answer is the user's answer, as an integer.
 	 * @return true if correct, false otherwise
 	 */
 	public boolean guess(int answer) {
@@ -41,8 +40,7 @@ public class NumberGame {
 	/**
 	 * Set a message about the game.
 	 * 
-	 * @param newmessage
-	 *            a string about game or most recent guess.
+	 * @param newmessage a string about game or most recent guess.
 	 */
 	public void setMessage(String newmessage) {
 		this.message = newmessage;
@@ -74,6 +72,15 @@ public class NumberGame {
 	 * @return 0. Default is 0.
 	 */
 	public int getCount() {
+		return 0;
+	}
+
+	/**
+	 * Gets user's guess number
+	 * 
+	 * @return 0. Default is 0.
+	 */
+	public int getGuessed() {
 		return 0;
 	}
 }

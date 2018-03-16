@@ -17,11 +17,12 @@ public class TongGame extends NumberGame {
 	/** The count. Default is 0. */
 	private int count = 0;
 
+	private int guessed;
+
 	/**
 	 * Initialize a new TongGame.
 	 *
-	 * @param upperBound
-	 *            the max value for the secret number (>1).
+	 * @param upperBound the max value for the secret number (>1).
 	 * 
 	 */
 	public TongGame(int upperBound) {
@@ -35,19 +36,24 @@ public class TongGame extends NumberGame {
 	/**
 	 * Evaluate a user's guess. Also set a message to help the user.
 	 * 
-	 * @param number
-	 *            the user's answer, as an integer.
+	 * @param number the user's answer, as an integer.
 	 * @return true if it is correct, false otherwise.
 	 */
 	public boolean guess(int number) {
 		count = count + 1;
+		guessed = number;
 		if (number == secret) {
+			setChanged();
+			notifyObservers();
 			return true;
 		} else if (number < secret) {
 			setMessage("Your answer is too small.");
 		} else /* if (number > secret) */ {
 			setMessage("Your answer is too large.");
 		}
+
+		setChanged();
+		notifyObservers();
 		return false;
 	}
 
@@ -77,5 +83,14 @@ public class TongGame extends NumberGame {
 	 */
 	public int getCount() {
 		return count;
+	}
+
+	/**
+	 * Get user's guess number.
+	 * 
+	 * @return guessed number
+	 */
+	public int getGuessed() {
+		return guessed;
 	}
 }
